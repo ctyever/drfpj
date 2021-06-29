@@ -1,6 +1,5 @@
 import React from 'react'
-import { BlogMenu as Menu } from '../common'
-import './table.style.css'
+import { BlogMenu as Menu } from 'common/Menu'
 
 const Blog = ({children}) => (<>
     <h1>Blog</h1>
