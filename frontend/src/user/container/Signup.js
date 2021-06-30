@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Signup.css'
-import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router'
 import { userSignup } from 'api/index'
 
@@ -18,9 +17,15 @@ const SignUp = () => {
 
     const handleSubmit = e => {
       e.preventDefault()
+      let handleErrors = response => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response;
+      }
+      
       alert(`전송 클릭 ${JSON.stringify({...userInfo})}`)
-      const signupRequest = {...userInfo}
-      userSignup(signupRequest)
+      userSignup({...userInfo})
       .then(res => {
         alert(`회원가입 완료 : ${res.data.result}`)
         // history.push('login')
@@ -46,7 +51,7 @@ const SignUp = () => {
 
     return (<>
     <div className="Signup">
-    <form onSubmit={handleSubmit} method='get' style={{border:"1px solid #ccc"}}>
+    <form onSubmit={handleSubmit} method='post' style={{border:"1px solid #ccc"}}>
   <div className="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>

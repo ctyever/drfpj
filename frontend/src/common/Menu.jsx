@@ -26,11 +26,12 @@ export const ItemMenu = () => (<nav>
 )
 export const BlogMenu = () => (<nav>
     <ol>
-        <li><Link to='/post-list'>게시글 목록</Link></li>
-        <li><Link to='/post-register'>게시글 쓰기</Link></li>
-        <li><Link to='/item-retreive'>게시글 조회</Link></li>
-        <li><Link to='/post-update'>게시글 수정</Link></li>
-        <li><Link to='/post-delete'>게시글 삭제</Link></li>
+        <li><Link to='/postlist'>게시글 목록</Link></li>        
+        <li><Link to='/postup'>게시글 쓰기</Link></li>
+        <li><Link to='/postretreive'>게시글 조회</Link></li>
+        <li><Link to='/postdetail'>게시글 상세</Link></li>
+        <li><Link to='/postupdate'>게시글 수정</Link></li>
+        <li><Link to='/postdelete'>게시글 삭제</Link></li>        
     </ol>
 </nav>
 )

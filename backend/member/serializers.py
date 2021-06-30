@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Member
+from .models import MemberVO as member
 
 
 class MemberSerializer(serializers.Serializer):
@@ -9,11 +9,11 @@ class MemberSerializer(serializers.Serializer):
     email = serializers.EmailField()
 
     class Meta:
-        managed = True
-        db_table = 'members'
+        model = member
+        fields = '__all__'
 
     def create(self, validated_data):
-        return Member.objects.create(**validated_data)
+        return member.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
         """

@@ -16,15 +16,12 @@ Including another URLconf
 from common.views import Connetion
 from django.urls import path, include
 from rest_framework import routers
-from django.conf.urls import url
-from django.contrib import admin
-from member.views import Auth
 
 router = routers.DefaultRouter()
 
 urlpatterns = [
     path('connection', Connetion.as_view()),
     path('board', include('board.urls')),
-    url(r'^member', Auth.as_view()),
+    path('member', include('member.urls')),
 
 ]
