@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UserDetail = () => {
+const MemberDetail = () => {
     return (<>
  
         
@@ -16,4 +16,4 @@ const UserDetail = () => {
       </>)
 }
 
-export default UserDetail
+export default MemberDetail

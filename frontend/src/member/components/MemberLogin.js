@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import { userLogin } from 'api/index'
+import { memberLogin } from 'api/index'
 // import './Login.css'
-const Login = () => {
+const MemberLogin = () => {
 
     const [userInfo, setUserLogin] = useState({
       username : '',
@@ -12,7 +12,7 @@ const Login = () => {
 
     const handleSubmit = e => {
       e.preventDefault()
-      userLogin({...userInfo})
+      memberLogin({...userInfo})
       .then(res => {
         alert(`로그인 성공 : : ${res.data.result}`)
       })
@@ -66,4 +66,4 @@ const Login = () => {
     </>)
 }
 
-export default Login
+export default MemberLogin

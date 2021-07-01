@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './Signup.css'
+import 'member/styles/Signup.css'
 import { useHistory } from 'react-router'
-import { userSignup } from 'api/index'
+import { memberRegister } from 'api/index'
 
 const SignUp = () => {
     const history = useHistory()
@@ -25,7 +25,7 @@ const SignUp = () => {
       }
       
       alert(`전송 클릭 ${JSON.stringify({...userInfo})}`)
-      userSignup({...userInfo})
+      memberRegister({...userInfo})
       .then(res => {
         alert(`회원가입 완료 : ${res.data.result}`)
         // history.push('login')

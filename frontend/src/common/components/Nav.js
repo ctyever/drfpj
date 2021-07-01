@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Nav.css'
+import 'common/style/Nav.css'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -81,9 +81,9 @@ export default function SearchAppBar() {
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
               <Link to='/home'>Home</Link>&nbsp;&nbsp;
-              <Link to='/user'>User</Link>&nbsp;&nbsp;
+              <Link to='/member'>Member</Link>&nbsp;&nbsp;
               <Link to='/item'>Item</Link>&nbsp;&nbsp;
-              <Link to='/blog'>Blog</Link>&nbsp;&nbsp;
+              <Link to='/board'>Board</Link>&nbsp;&nbsp;
               <Link to='/stock'>Stock</Link>
             </Typography>
             <div className={classes.search}>

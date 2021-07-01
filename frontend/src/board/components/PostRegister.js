@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router'
-import { userPostup } from 'api/index'
+import { postRegister } from 'api/index'
 
-const PostWrite = () => {
+const PostRegister = () => {
 
 
     const [userPost, setUserPost] = useState({
@@ -14,7 +14,7 @@ const PostWrite = () => {
 
     const handleSubmit = e => {
       e.preventDefault()
-      userPostup({...userPost})
+      postRegister({...userPost})
       .then(res => {
         alert(`게시글 쓰기 완료 : ${res.data.result}`)
       })
@@ -63,4 +63,4 @@ const PostWrite = () => {
 </>)
 }
 
-export default PostWrite
+export default PostRegister
