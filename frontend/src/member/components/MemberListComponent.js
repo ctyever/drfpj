@@ -55,20 +55,18 @@ const MemberListComponent = ({ match }) => {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>회원 ID</TableCell>
-            <TableCell align="right">비밀번호</TableCell>
+            <TableCell>회원 ID</TableCell>            
             <TableCell align="right">회원 이름</TableCell>
             <TableCell align="right">이메일</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           { members.length != 0
-           ? members.map(({ username, password, name, email }) => (
+           ? members.map(({ username, name, email }) => (
                <TableRow key={ username } >
-                 <TableCell align="right">{ username }</TableCell>
-                <TableCell component="th" scope="row">{ password }</TableCell>
+                <TableCell align="right">{ username }</TableCell>
                 <TableCell align="right"><Link to={`/member-detail/${ username }`} 
-                onClick={ () => handleClick( JSON.stringify({ username, password, name, email }) )}>{ name }</Link></TableCell>
+                onClick={ () => handleClick( JSON.stringify({ username, name, email }) )}>{ name }</Link></TableCell>
                 <TableCell align="right">{ email }</TableCell>
             </TableRow>)
           )

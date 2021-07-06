@@ -8,10 +8,9 @@ const MemberDeleteForm = () => {
 
     const handleSubmit = e => {
       e.preventDefault()
-      const member = JSON.parse(localStorage.getItem("loginedMember"))      
+      const member = JSON.parse(localStorage.getItem("loginedMember"))
+      
       member.password = password
-     
-
       memberDelete({member})
       .then(res => {
         if(res.data.result === 'PASSWORD-FAIL'){
@@ -27,8 +26,7 @@ const MemberDeleteForm = () => {
   
       })
     }
-
-
+    
     return (<>
       <form method="put" onSubmit={handleSubmit} >
             
