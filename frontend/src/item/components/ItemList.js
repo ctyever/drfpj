@@ -1,9 +1,8 @@
-import React from 'react'
+import react from 'react'
+import '../styles/ItemList.css'
 
-
-const ItemList = () => {<>
-
-</>
+const ItemList = () => {
+    return (<></>)
 }
 
 export default ItemList

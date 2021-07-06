@@ -1,9 +1,9 @@
-import React from 'react'
+import react from 'react'
+import '../styles/ItemDelete.css'
 
-
-const ItemDelte = () => {<>
-
-</>
+const ItemDelete = () => {
+    return (<></>)
 }
 
-export default ItemDelte
+export default ItemDelete;
+

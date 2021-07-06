@@ -5,4 +5,4 @@ from rest_framework.views import APIView
 
 class Connetion(APIView):
     def get(self, request):
-        return Response({'connection': 'success'})
+        return Response({'connection': 'SUCCESS'})

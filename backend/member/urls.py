@@ -1,9 +1,14 @@
 from django.conf.urls import url
 from member import views
+# from django.urls import path
 
 urlpatterns = [
     url(r'^register', views.members),
     url(r'^list', views.members),
+    url(r'^login', views.login),
+    url(r'^modify', views.member_modify),
+    url(r'^delete', views.member),
+    # path('delete/<slug:pk>', views.member),
 
 ]
 

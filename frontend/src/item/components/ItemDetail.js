@@ -1,9 +1,8 @@
-import React from 'react'
+import react from 'react'
+import '../styles/ItemDetail.css'
 
-
-const ItemDetail = () => {<>
-
-</>
+const ItemDetail = () => {
+    return (<></>)
 }
 
-export default ItemDetail
+export default ItemDetail;

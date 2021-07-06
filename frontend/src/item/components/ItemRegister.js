@@ -1,9 +1,8 @@
-import React from 'react'
+import react from 'react'
+import '../styles/ItemRegister.css'
 
-
-const ItemRegister = () => {<>
-
-</>
+const ItemRegister = () => {
+    return (<></>)
 }
 
 export default ItemRegister

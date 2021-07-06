@@ -1,19 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router'
 
-export const MemberMenu = () => (<nav>
-        <ol>
-            <li><Link to='/member-login'>회원가입</Link></li>
-            <li><Link to='/member-list'>회원목록</Link></li>
-            <li><Link to='/member-register'>회원등록</Link></li>
-            <li><Link to='/member-retreive'>회원조회</Link></li>
-            <li><Link to='/member-detail'>회원상세</Link></li>
-            <li><Link to='/member-modify'>회원수정</Link></li>
-            <li><Link to='/member-delete'>회원탈퇴</Link></li>
-        </ol>
-</nav>
 
-)
+
+
+
+export const MemberMenu = () => {
+
+    const history = useHistory()
+
+    return (<nav>
+            {
+                localStorage.getItem("loginedMember") === '' ?
+                <ol>
+                    <li><Link to='/member-login'>회원로그인</Link></li>
+                    <li><Link to='/member-register'>회원등록</Link></li>
+                </ol>
+                :
+                <ol>
+                    <li><Link to='/member-list'>회원목록</Link></li>
+                    <li><Link to='/member-retreive'>회원이름조회</Link></li>
+                    <li><Link to='/member-detail'>회원상세</Link></li>
+                    <li><Link to='/member-modify'>회원수정</Link></li>
+                    <li><Link to='/member-delete'>회원탈퇴</Link></li>
+                    <li><Link to='/member-logout' onClick={() => 
+                    {
+                        localStorage.setItem("loginedMember","")
+                        alert('2')
+                        history.push("/home")
+                        alert('2')
+                        }
+                    }>로그아웃</Link></li>
+                </ol>
+            }
+       
+</nav>)}
+ 
+       
 export const ItemMenu = () => (<nav>
     <ol>
         <li><Link to='/item-list'>아이템목록</Link></li>
@@ -33,18 +57,21 @@ export const BoardMenu = () => (<nav>
         <li><Link to='/post-retrieve'>게시글조회</Link></li>
         <li><Link to='/post-detail'>게시글상세</Link></li>
         <li><Link to='/post-modify'>게시글수정</Link></li>
-        <li><Link to='/post-delete'>게시글삭제</Link></li>     
+        <li><Link to='/post-delete'>게시글삭제</Link></li>
     </ol>
 </nav>
+
 )
 
 export const StockMenu = () => (<nav>
     <ol>
-        <li><Link to='/stock-list'>게시글 목록</Link></li>
-        <li><Link to='/stock-write'>게시글 쓰기</Link></li>
-        <li><Link to='/stock-read'>게시글 읽기</Link></li>
-        <li><Link to='/stock-remove'>회원정보삭제</Link></li>
+        <li><Link to='/stock-list'>종목리스트</Link></li>
+        <li><Link to='/stock-register'>종목등록</Link></li>
+        <li><Link to='/stock-retrieve'>종목조회</Link></li>
+        <li><Link to='/stock-detail'>종목상세</Link></li>
+        <li><Link to='/stock-modify'>종목수정</Link></li>
+        <li><Link to='/stock-delete'>종목삭제</Link></li>
     </ol>
 </nav>
-)
 
+)

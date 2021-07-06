@@ -1,9 +1,8 @@
-import React from 'react'
+import react from 'react'
+import '../styles/ItemRetrieve.css'
 
-
-const ItemRetrieve = () => {<>
-
-</>
+const ItemModify = () => {
+    return (<></>)
 }
 
-export default ItemRetrieve
+export default ItemModify

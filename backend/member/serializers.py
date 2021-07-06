@@ -16,12 +16,5 @@ class MemberSerializer(serializers.Serializer):
         return member.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
-        """
-        Update and return an existing `Snippet` instance, given the validated data.
-        """
-        instance.username = validated_data.get('username', instance.username)
-        instance.password = validated_data.get('code', instance.password)
-        instance.name = validated_data.get('linenos', instance.name)
-        instance.email = validated_data.get('language', instance.email)
-        instance.save()
-        return instance
+        member.objects.filter(pk=instance.username).update(**validated_data)
+        return member

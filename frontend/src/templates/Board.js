@@ -1,5 +1,6 @@
 import React from 'react'
-import { BoardMenu as Menu } from 'common/components/Menu'
+import { BoardMenu as Menu } from '../common'
+import './styles/table.style.css'
 
 const Board = ({children}) => (<>
     <h1>Board</h1>
@@ -8,4 +9,3 @@ const Board = ({children}) => (<>
 </>)
 
 export default Board
-
